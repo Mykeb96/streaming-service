@@ -4,7 +4,7 @@ import { Storage } from "@aws-amplify/storage"
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import { Amplify } from 'aws-amplify';
-import awsExports from '../src/aws-exports';
+import awsExports from '../aws_exports/aws-exports';
 import {useState, useEffect} from 'react'
 
 
