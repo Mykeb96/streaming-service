@@ -19,13 +19,11 @@
 
 .video_player_container{
   background: black;
-  /* border: 1px solid white; */
   border-radius: 4px;
   height: 500px;
 }
 
 .video_list_container{
-  /* background: #FAF0E6; */
   border-radius: 4px;
   width: 902px;
   height: 20dvh;
@@ -34,17 +32,13 @@
   padding: 20px;
   overflow-y: scroll;
   border: 1px solid grey;
-  box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px, rgba(255, 255, 255, 0.23) 0px 3px 6px;}
-
-.video{
-  /* object-fit: fill; */
+  box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px, rgba(255, 255, 255, 0.23) 0px 3px 6px;
 }
 
 .video_list_element{
   transition: 0.3s;
   font-size: 1em;
   background: rgb(201, 201, 201);
-  /* background: #f0d3b6; */
   margin: 0px 0px 10px 0px;
   padding: 5px 15px 5px 15px;
   border-radius: 16px;
