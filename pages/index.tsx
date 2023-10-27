@@ -60,7 +60,7 @@ const [selectedVideo, setSelectedVideo] = useState<any>('')
           </div>
 
           <div className={styles.video_list_container}>
-            {data.map((el: any, index: number) => el.key != '' ? <span className={styles.video_list_element} onClick={() => setSelectedVideo(el.key)}>{el.key.replace('.mp4', '')}</span> : null)}
+            {data.map((el: any, index: number) => el.key != '' ? <span key={index} className={styles.video_list_element} onClick={() => setSelectedVideo(el.key)}>{el.key.replace('.mp4', '')}</span> : null)}
 
           </div>
 
