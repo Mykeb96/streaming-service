@@ -2,10 +2,9 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { Storage } from "@aws-amplify/storage"
 import '@aws-amplify/ui-react/styles.css';
-import { Amplify } from 'aws-amplify';
+import { Amplify, Auth } from 'aws-amplify';
 import awsExports from '../aws_exports/aws-exports';
 import {useState, useEffect} from 'react'
-import { Auth } from 'aws-amplify';
 
 export default function Videos() {
 
@@ -19,7 +18,8 @@ export default function Videos() {
         try {
             await Auth.currentAuthenticatedUser();
             return true;
-        } catch {
+        } 
+        catch {
             return false;
         }
       }
@@ -34,17 +34,16 @@ export default function Videos() {
 
     useEffect(() => {
 
-        Storage.list('', {level: 'public'}) // for listing ALL files without prefix, pass '' instead
+        Storage.list('', {level: 'public'})
           .then(({ results }) => {
-            // console.log(results)
             setData(results)
             setSelectedVideo(results[1].key)
           })
           .catch((err) => console.log(err));
 
           Auth.currentAuthenticatedUser()
-          .then((res) => setUserName(res.username))
-          .catch((err) => console.log(err))
+            .then((res) => setUserName(res.username))
+            .catch((err) => console.log(err))
        
       }, [])
 
@@ -56,6 +55,7 @@ export default function Videos() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
             </Head>
+            
             <main className={styles.main}>
 
                 <div className={styles.user_login}>
@@ -64,7 +64,7 @@ export default function Videos() {
                         Auth.signOut()
                         .then((res) => window.location.replace("https://main.d176952duc25ab.amplifyapp.com/"))
                     }}>
-                        Sign Out
+                    Sign Out
                     </button>
                 </div>
 
@@ -75,7 +75,7 @@ export default function Videos() {
                         {data.length > 0 ?
                         <div>
                             <video height={500} width={900} controls key={selectedVideo} className={styles.video}>
-                            <source src={`https://d2by0efpla5ofl.cloudfront.net/public/${selectedVideo}`}/>
+                                <source src={`https://d2by0efpla5ofl.cloudfront.net/public/${selectedVideo}`}/>
                             </video>
                         </div> 
                         : 
