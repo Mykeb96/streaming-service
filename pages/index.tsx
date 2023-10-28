@@ -6,6 +6,7 @@ import { Amplify } from 'aws-amplify';
 import awsExports from '../aws_exports/aws-exports';
 import { Auth } from 'aws-amplify';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -54,7 +55,7 @@ export default function Home() {
               <span>{user?.username}</span>
               <button onClick={signOut}>Sign out</button>
             </main>
-            <a href='/videos'><button className={styles.videos_button}>Videos</button></a>
+            <Link href='/videos'><button className={styles.videos_button}>Videos</button></Link>
           </div>
         )} 
       </Authenticator>
