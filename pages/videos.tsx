@@ -27,7 +27,7 @@ export default function Videos() {
     isUserAuth()
         .then((res) => {
           if (res == false){
-            window.location.replace("http://localhost:3000/")
+            window.location.replace("https://main.d176952duc25ab.amplifyapp.com/")
           }
         })
         .catch((err) => console.log(err))
@@ -62,7 +62,7 @@ export default function Videos() {
                     <span>{userName}</span>
                     <button onClick={() => {
                         Auth.signOut()
-                        .then((res) => window.location.replace("http://localhost:3000/"))
+                        .then((res) => window.location.replace("https://main.d176952duc25ab.amplifyapp.com/"))
                     }}>
                         Sign Out
                     </button>

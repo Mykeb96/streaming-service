@@ -26,7 +26,7 @@ export default function Home() {
   isUserAuth()
     .then((res) => {
       if (res == true){
-        window.location.replace("http://localhost:3000/videos")
+        window.location.replace("https://main.d176952duc25ab.amplifyapp.com/videos")
       }
     })
     .catch((err) => console.log(err))
